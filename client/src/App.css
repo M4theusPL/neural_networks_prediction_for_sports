@@ -36,3 +36,95 @@
     transform: rotate(360deg);
   }
 }
+
+.form {
+  margin: auto;
+  margin-top: 35px;
+  height: 50vh;
+  width: 50%;
+}
+
+.form-titles {
+  font-size: 36px;
+}
+
+.progressbar {
+  margin: auto;
+  width: 400px;
+  height: 12px;
+  background-color: rgb(201, 201, 201);
+  margin-bottom: 15px;
+  border-radius: 8px;
+  z-index: 999;
+}
+
+.progressbar div {
+  width: 33.3%;
+  height: 100%;
+  background-color: rgb(40, 141, 0);
+  border-radius: 8px;
+}
+
+.form-container {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.body {
+  margin-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discipline-component {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.components {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.components label{
+  font-size: 18px;
+}
+  
+.buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+.buttons button{
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+  
+button
+{
+  margin: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgb(201, 201, 201);
+  border-radius: 8px;
+  width: 20vw;
+}
+  
+button.selected {
+  background-color: rgb(40, 141, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
