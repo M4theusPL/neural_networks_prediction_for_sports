@@ -22,3 +22,14 @@ python football_neural_network.py
 In order to see the swagger documentation you have to:
 * run the project (follow the above steps)
 * open browser in location: `localhost:5000/api/docs`
+
+### Install packages
+```bash
+npm install papaparse
+```
+
+### Run Project React.JS
+```
+cd ./client/src
+npm start
+```
