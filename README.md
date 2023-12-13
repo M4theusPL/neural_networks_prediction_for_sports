@@ -25,11 +25,13 @@ In order to see the swagger documentation you have to:
 
 ### Install packages
 ```bash
+npm install pandas
 npm install papaparse
 ```
 
 ### Run Project React.JS
-```
+```bash
 cd ./client/src
 npm start
 ```
+Open browser in location `http://localhost:3000/`
