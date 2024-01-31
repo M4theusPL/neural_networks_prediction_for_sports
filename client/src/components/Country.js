@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
+import Basketball_Data from "../csvs/basketball_data.csv";
 import Football_Data from "../csvs/football_data.csv";
+import Handball_Data from "../csvs/handball_data.csv";
+import Volleyball_Data from "../csvs/volleyball_data.csv";
 
 function Country({formData, setFormData}){
     const [countries, setCountries] = useState([]);
@@ -15,15 +18,13 @@ function Country({formData, setFormData}){
             if (discipline === "Football"){
                 response = await fetch(Football_Data);
             }
-            
-
-            // else if (country === "Basketball") {
-            //     response = await fetch(Basketball_Data);
-            // } else if (country === "Handball") {
-            //     response = await fetch(Handball_Data);
-            // } else if (country === "Volleyball") {
-            //     response = await fetch(Volleyball_Data);
-            // } 
+            else if (discipline === "Basketball") {
+                response = await fetch(Basketball_Data);
+            } else if (discipline === "Handball") {
+                response = await fetch(Handball_Data);
+            } else if (discipline === "Volleyball") {
+                response = await fetch(Volleyball_Data);
+            } 
             
             const data = await response.text();
     

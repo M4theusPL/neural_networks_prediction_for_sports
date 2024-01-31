@@ -1,25 +1,31 @@
-
+import os.path as path
+import tensorflow as tf
 from sklearn.preprocessing import StandardScaler
 
-def get_predictions(model, data):
+
+def get_predictions(model, data, sport):
     x = data.drop(['Opponent', 'Result'], axis=1)
     y = data['Result']
     scaler = StandardScaler()
     x = scaler.fit_transform(x)
 
-    model.compile(optimizer='adam', loss='mean_squared_error')
-    model.fit(x, y, epochs=100, batch_size=1, validation_data=(x, y))
+    if path.isdir('./models/' + sport):
+        model = tf.keras.models.load_model('./models/' + sport)
+    else:
+        model.compile(optimizer='adam', loss='mean_squared_error')
+        model.fit(x, y, epochs=100, batch_size=1, validation_data=(x, y))
+        model.save('./models/' + sport, save_format='tf')
 
     return model.predict(x)
 
 
-def get_results(predictions):
+def get_results(predictions, model):
     res = []
 
     for i in predictions:
-        if i > -1.5 and i < -0.5:
+        if i > -1.5 and i <= model.up_lose_boundery:
             res.append(-1)
-        elif i > 0.5 and i < 1.5:
+        elif i >= model.down_win_boundery and i < 1.5:
             res.append(1)
         else:
             res.append(0)
